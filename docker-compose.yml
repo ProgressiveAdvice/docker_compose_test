@@ -1,0 +1,12 @@
+version: '2'
+services: 
+  app:
+    image: php:7.0-cli
+    volumes_from:
+     - data
+    command: php /aron_appja/aron.php
+  data:
+    image: busybox
+    volumes:
+     - .:/aron_appja
+    command: tail -f /dev/null

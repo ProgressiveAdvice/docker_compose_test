@@ -27,3 +27,18 @@ Githubos integrálás lépések:
 
  - Githubon létrehozni egy új repositoryt README-vel
  - Lokálisan futtatni a gyökérkönyvtárban: git init
+ - Hozzáadjuk a githubos repositoryt mint fõ központi repo. A repo címét a github oldalán a "Clone and download" gombra kattintva írja ki:
+   git remote add origin https://github.com/ProgressiveAdvice/docker_compose_test.git
+ - Ellenõrizzük, hogy hozzáadta a távoli repot: git remote -v 
+ - Nézünk egy helyi állapotot: git status
+ - Hozzáadjuk az összes filet a commit "stagehez": git add .
+ - Megnézzük, hogy valóban mindegyik bekerült-e a stagebe: git status
+ - Commitoljuk: git commit -m "Initial commit"
+ - Megnézzük, hogy a commit benne van-e a logban: git log
+ - Lehúzzuk a távoli repo adatait (jelenleg ez csak egy üres README.MD): git pull
+ - Rinyálni fog, hogy nincs beállítva az upstream (melyik távoli branch tartozik a lokális branches, esetünkben a masterhez). A git által kiírt parancsot bemásoljuk: 
+   git branch --set-upstream-to=origin/master master
+ - Újra lehúzzuk a központi repo tartalmát (README.MD-t): git pull
+ - Hozzáadjuk ezt a file (info.txt) a repohoz. Mivel ezt folyamatosan írom éppen ezért minden egyes új begépelésnél ez bõvülni fog: git add info.txt
+ - Commitolunk: git commit -m "Added more content to info.txt" 
+ - Betoljuk a módosításokat a központi repoba: git push origin master
